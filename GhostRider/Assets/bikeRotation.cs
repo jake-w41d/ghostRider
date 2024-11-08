@@ -29,16 +29,8 @@ public class bikeRotation : MonoBehaviour
 
     private void animBike()
     {
-        if(r_mov)
-        { 
-            //bike.Rotate(new Vector3(0, 0, -30)); 
-            bike.rotation = Quaternion.Slerp(bike.rotation, Quaternion.Euler(0, 0, -maxRotate), 0.1f);
-        }
-        
-        if(l_mov)
-        { 
-            //bike.Rotate(new Vector3(0, 0, 30)); 
-            bike.rotation = Quaternion.Slerp(bike.rotation, Quaternion.Euler(0, 0, maxRotate), 0.1f);
-        }
+        if(r_mov){ bike.rotation = Quaternion.Slerp(bike.rotation, Quaternion.Euler(0, 0, -maxRotate), 0.1f); }        
+        else if(l_mov){ bike.rotation = Quaternion.Slerp(bike.rotation, Quaternion.Euler(0, 0, maxRotate), 0.1f); }
+        else{ bike.rotation = Quaternion.Slerp(bike.rotation, Quaternion.Euler(0, 0, 0), 0.1f); }
     }
 }
